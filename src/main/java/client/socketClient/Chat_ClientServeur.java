@@ -13,6 +13,8 @@ public class Chat_ClientServeur implements Runnable {
 	private BufferedReader in = null;
 	private Scanner sc;
 	private Thread t3, t4;
+	private String lastMessageServeur="";
+	
 	
 	public Chat_ClientServeur(Socket s){
 		socket = s;
@@ -27,7 +29,7 @@ public class Chat_ClientServeur implements Runnable {
 			
 			Thread t4 = new Thread(new Emission(out));
 			t4.start();
-			Thread t3 = new Thread(new Reception(in));
+			Thread t3 = new Thread(new Reception(in, this));
 			t3.start();
 		
 		   
@@ -35,6 +37,14 @@ public class Chat_ClientServeur implements Runnable {
 		} catch (IOException e) {
 			System.err.println("Le serveur distant s'est déconnecté !");
 		}
+	}
+
+	public String getLastMessageServeur() {
+		return lastMessageServeur;
+	}
+
+	public void setLastMessageServeur(String lastMessageServeur) {
+		this.lastMessageServeur = lastMessageServeur;
 	}
 
 }

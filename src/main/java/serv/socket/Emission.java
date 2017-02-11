@@ -13,10 +13,15 @@ public class Emission implements Runnable {
 	private String message = null;
 	private String reponse = null;
 	private Scanner sc = null;
+	private Chat_ClientServeur ccs= null;
 	
 	
-	public Emission(PrintWriter out) {
+	
+	
+	public Emission(PrintWriter out, Chat_ClientServeur ccs) {
 		this.out = out;
+		this.ccs=ccs;
+		this.message="";
 	}
 
 	
@@ -25,24 +30,16 @@ public class Emission implements Runnable {
 		  sc = new Scanner(System.in);
 		  
 		  while(true){
-			    System.out.println("La rÃ©ponse du serveur est :");
-				message = sc.nextLine();
+			  if (!message.equals(ccs.getLastMessageClient())){
+			    System.out.println("La réponse du serveur est :");
+				message = ccs.getLastMessageClient();
 				reponse=resolveRequest(message);
 				out.println(reponse);
 			    out.flush();
 			  }
+			  }
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 
 	private String resolveRequest(String message2) {
 		

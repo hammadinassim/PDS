@@ -13,10 +13,13 @@ public class Reception implements Runnable {
 
 	private BufferedReader in;
 	private String message = null;
+	private Chat_ClientServeur ccs;
 	
-	public Reception(BufferedReader in){
+	public Reception(BufferedReader in, Chat_ClientServeur ccs){
 		
 		this.in = in;
+		this.ccs=ccs;
+		
 	}
 	
 	public void run() {
@@ -25,7 +28,12 @@ public class Reception implements Runnable {
 	        try {
 	        	
 			message = in.readLine();
+			
+			
+			if (!message.equals(ccs.getLastMessageServeur())){
 			System.out.println("Le serveur vous dit :" +message);
+			ccs.setLastMessageServeur(message);
+			}
 			
 		    } catch (IOException e) {
 				

@@ -11,6 +11,7 @@ public class Client {
 	public static Socket socket = null;
 	public static Thread t1;
 	
+	
 	public static void main(String[] args) {
 	
 		
