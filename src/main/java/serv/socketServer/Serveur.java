@@ -1,10 +1,10 @@
-package main.java.serv.socket;
+package main.java.serv.socketServer;
 
 
 import java.io.*;
 import java.net.*;
 
-import main.java.serv.socket.Accepter_connexion;
+import main.java.serv.socketServer.Accepter_connexion;
 
 public class Serveur {
  public static ServerSocket ss = null;
