@@ -30,10 +30,10 @@ import javax.swing.border.TitledBorder;
 
 /**
  *
- * @author nassimhammadi
- */
+ * @author hollard hammadi
+*/
 public class HomeManager extends JFrame{
-    
+        
     
     public HomeManager(){
        
