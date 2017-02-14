@@ -28,7 +28,7 @@ public class Emission implements Runnable {
 		  sc = new Scanner(System.in);
 		  
 		  while(true){
-			    System.out.println("Bonjour client. 1 pour liste des véhicules, 2 pour liste des employés.:");
+			    System.out.println("Bonjour client. 1 pour liste des vehicules, 2 pour liste des employes.:");
 				message = sc.nextLine();
 				out.println(message);
 			    out.flush();

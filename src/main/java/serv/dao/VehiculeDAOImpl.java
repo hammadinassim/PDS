@@ -42,7 +42,9 @@ public class VehiculeDAOImpl implements VehiculeDAO {
      * Find a vehicle into the database
      * @param id The vehicle's id
      */
-    public void find( int id ) throws DAOException {
+    public Vehicule find( int id ) throws DAOException {
+    	
+    	Vehicule v=null;
         try {
             
             this.connection = daoFactory.getConnection();
@@ -65,8 +67,8 @@ public class VehiculeDAOImpl implements VehiculeDAO {
             String provenance = rs.getString(2);
             Timestamp date = rs.getTimestamp(3);
             
-            Vehicule v = new Vehicule(identifiant, provenance, date);
-            System.out.println("id : "+identifiant+" provenance : "+provenance+" dateEntree : "+date+"\n");
+            v = new Vehicule(identifiant, provenance, date);
+
            }
         } catch (SQLException ex) {
             Logger.getLogger(VehiculeDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -83,8 +85,10 @@ public class VehiculeDAOImpl implements VehiculeDAO {
         } catch (SQLException ex) {
             Logger.getLogger(VehiculeDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return v;
     }
-    
+    public void insert(Vehicule v) throws DAOException {
+    }
     
     /**
      * Insert a vehicle into the database
@@ -125,7 +129,10 @@ public class VehiculeDAOImpl implements VehiculeDAO {
             Logger.getLogger(VehiculeDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+    public void update(Vehicule v) throws DAOException {
+       // Mettre à jour le vehicule
+          
+    }
     /**
      * Update a vehicle into the database
      * @param id The vehicle's id

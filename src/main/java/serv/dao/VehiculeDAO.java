@@ -22,7 +22,7 @@ public interface VehiculeDAO {
      * @param id The vehicle id
      * @throws DAOException
      */
-    void find( int id ) throws DAOException;
+    Vehicule find( int id ) throws DAOException;
     
     /**
      * Update a vehicle into the database

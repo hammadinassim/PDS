@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package IHM;
+package main.java.serv.dao;
 
 import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
 import java.awt.Dimension;

@@ -48,7 +48,7 @@ public class DAOFactory {
      * @param username The login to access the database
      * @param password the password to access the database
      */
-    DAOFactory( String url, String username, String password ) {
+    public DAOFactory( String url, String username, String password ) {
         this.url = url;
         this.username = username;
         this.password = password;
