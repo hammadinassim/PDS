@@ -4,5 +4,5 @@ import javax.swing.JFrame;
 
 
 public class maFenetre extends JFrame{
-
+    
 }
