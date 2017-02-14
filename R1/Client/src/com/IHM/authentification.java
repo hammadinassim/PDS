@@ -8,6 +8,7 @@ package vue;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
 import java.awt.*;
 import java.awt.event.*;
+import static javafx.scene.paint.Color.TRANSPARENT;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
@@ -22,8 +23,11 @@ private JCheckBox c1, c2;
     
     
         JPanel pannel = new JPanel();
-      //  setSize(400,400);
-        setLocation(100, 100);
+    
+        pannel.setBackground(Color.WHITE);
+    
+        pannel.setLayout(new GridLayout(3,3));
+        pannel.setPreferredSize(new Dimension(450,120));
         add(pannel);
         pannel.setBorder(new TitledBorder("Authentifiez vous")); 
         pannel.setLayout(new BoxLayout(pannel, BoxLayout.Y_AXIS)); 
