@@ -17,7 +17,7 @@ import javax.swing.*;
  */
 public class InterfaceGraphique extends JFrame {
     
-        Image img;
+       
     public InterfaceGraphique(){
            design();   
             
@@ -26,7 +26,7 @@ public class InterfaceGraphique extends JFrame {
     
     public void design(){
             JFrame f = new JFrame();
-            setTitle("Interface R1");
+            setTitle("Interface");
             setSize(800, 400);
             Toolkit tk = Toolkit.getDefaultToolkit();
             Dimension dimEcran = tk.getScreenSize(); 
@@ -34,7 +34,6 @@ public class InterfaceGraphique extends JFrame {
             setLocationRelativeTo(null); 
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
             Authentification a = new Authentification();
-    
             this.getContentPane().add(a, BorderLayout.CENTER);
            // Accueil aa = new Accueil();
             // this.getContentPane().add(aa);
@@ -47,8 +46,10 @@ public class InterfaceGraphique extends JFrame {
 	
        // InterfaceGraphique ihm = new InterfaceGraphique();
         // ihm.setVisible(true);
-       InterfaceGraphique i = new InterfaceGraphique();
-        i.setVisible(true);
+      // InterfaceGraphique i = new InterfaceGraphique();
+     //   i.setVisible(true);
+     HomeManager m = new HomeManager();
+     m.setVisible(true);
 	
     }
 }
